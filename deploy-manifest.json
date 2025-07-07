@@ -22,6 +22,17 @@
       }
     },
     {
+      "path": "/*.*",
+      "target": {
+        "kind": "Compute",
+        "src": "default",
+        "cacheControl": "public, max-age=2"
+      },
+      "fallback": {
+        "kind": "Static"
+      }
+    },
+    {
       "path": "/*",
       "target": {
         "kind": "Compute",
@@ -32,7 +43,7 @@
   "computeResources": [
     {
       "name": "default",
-      "runtime": "nodejs18.x",
+      "runtime": "nodejs20.x",
       "entrypoint": "index.js"
     }
   ]
