@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=dev nodemon src/index.js",
-    "build": "esbuild src/index.js --platform=node --bundle --outfile=dist/index.js",
+    "build": "node esbuild.mjs",
     "start": "node src/index.js",
     "serve": "node dist/index.js",
     "postbuild": "chmod +x bin/postbuild.sh && ./bin/postbuild.sh"
