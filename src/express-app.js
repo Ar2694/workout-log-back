@@ -21,7 +21,7 @@ module.exports = async (app) => {
   schedule("/api", app);
   exercises("/api", app);
 
-  router.get('/', function (req, res, next) {
+  app.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
   });
 
