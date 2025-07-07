@@ -5,12 +5,10 @@ import dotEnv  from "dotenv";
 rmSync("dist", { recursive: true, force: true });
 
   dotEnv.config();
-  console.log(process.env, "TEST ENV")
+
 // Run esbuild with the specified options
 build({
   entryPoints: ["src/index.js"],
-  bundle: true,
-  sourcemap: true,
   format: "cjs",
   platform: "node",
   target: "node20",
