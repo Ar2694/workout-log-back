@@ -25,11 +25,11 @@
       "path": "/*.*",
       "target": {
         "kind": "Compute",
-        "src": "default",
-        "cacheControl": "public, max-age=2"
+        "src": "default"
       },
       "fallback": {
-        "kind": "Static"
+        "kind": "Static",
+        "cacheControl": "public, max-age=2"
       }
     },
     {
