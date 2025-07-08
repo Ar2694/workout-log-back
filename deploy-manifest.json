@@ -24,12 +24,12 @@
     {
       "path": "/*.*",
       "target": {
-        "kind": "Compute",
-        "src": "default"
-      },
-      "fallback": {
         "kind": "Static",
         "cacheControl": "public, max-age=2"
+      },
+      "fallback": {
+        "kind": "Compute",
+        "src": "default"
       }
     },
     {

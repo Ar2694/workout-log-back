@@ -1,14 +1,16 @@
 import { build } from "esbuild";
 import { rmSync } from "fs";
-import dotEnv  from "dotenv";
+import dotEnv from "dotenv";
 // Remove the previous build directory
 rmSync("dist", { recursive: true, force: true });
 
-  dotEnv.config();
+dotEnv.config();
 
 // Run esbuild with the specified options
 build({
   entryPoints: ["src/index.js"],
+  bundle: true,
+  sourcemap: true,
   format: "cjs",
   platform: "node",
   target: "node20",
