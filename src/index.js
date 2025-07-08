@@ -1,9 +1,9 @@
 const express = require("express");
 require('module-alias/register');
 
-const { PORT } = require('./config');
-const { databaseConnection } = require('./database');
-const expressApp = require('./express-app');
+const { PORT } = require('src/config');
+const { databaseConnection } = require('src/database');
+const expressApp = require('src/express-app');
 
 const StartServer = async () => {
     const app = express();  
