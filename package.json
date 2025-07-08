@@ -7,7 +7,7 @@
     "dev": "NODE_ENV=dev nodemon src/index.js",
     "build": "node esbuild.mjs",
     "start": "node src/index.js",
-    "serve": "node dist/index.js",
+    "serve": "node .amplify-hosting/compute/default/index.js",
     "postbuild": "chmod +x bin/postbuild.sh && ./bin/postbuild.sh"
   },
   "_moduleAliases": {
