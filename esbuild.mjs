@@ -9,6 +9,7 @@ rmSync("dist", { recursive: true, force: true });
 // Run esbuild with the specified options
 build({
   entryPoints: ["src/index.js"],
+  bundle: true,
   format: "cjs",
   platform: "node",
   target: "node20",
