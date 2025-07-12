@@ -1,5 +1,5 @@
 const dotEnv = require("dotenv");
-console.log(process.env.NODE_ENV, "test")
+
 
 if (process.env.NODE_ENV === "dev") {
   const configFile = `./.env.${process.env.NODE_ENV}`;
@@ -7,6 +7,8 @@ if (process.env.NODE_ENV === "dev") {
 } else {
   dotEnv.config();
 }
+
+console.log(process.env, "test")
 
 module.exports = {
   PORT: process.env.PORT,

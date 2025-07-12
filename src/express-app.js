@@ -21,10 +21,11 @@ module.exports = async (app) => {
   schedule("/api", app);
   exercises("/api", app);
 
-  app.get('/', function (req, res, next) {
+  router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
   });
-
+  
+  app.use('/', router)
   // error handling
   app.use(HandleErrors);
 
