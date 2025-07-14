@@ -1,0 +1,36 @@
+{
+  "name": "workout-log-back",
+  "version": "1.0.0",
+  "description": "workout log backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon src/index.js",
+    "build": "node esbuild.mjs",
+    "start": "node src/index.js",
+    "serve": "node dist/index.js",
+    "postbuild": "chmod +x bin/postbuild.sh && ./bin/postbuild.sh"
+  },
+  "_moduleAliases": {
+    "src": "src"
+  },
+  "author": "Arlix Sorto",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "module-alias": "^2.2.3",
+    "mongoose": "^8.7.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
+    "winston": "^3.15.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5"
+  }
+}
