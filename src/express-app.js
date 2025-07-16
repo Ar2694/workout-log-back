@@ -13,9 +13,19 @@ module.exports = async (app) => {
   app.use(express.static("src/public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(cors());
-  app.use(morgan("dev"))
 
+  app.use(morgan("dev"))
+// Configure CORS options
+const corsOptions = {
+  origin: 'http://localhost:4173/', // Replace with the actual URL of your client application
+
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
+      credentials: true, // Allow cookies and authentication headers to be sent
+      optionsSuccessStatus: 204 // For preflight requests
+};
+
+// Use the cors middleware with specific origin
+app.use(cors(corsOptions));
   //api
   workout("/api", app);
   schedule("/api", app);
