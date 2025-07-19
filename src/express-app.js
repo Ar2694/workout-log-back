@@ -17,7 +17,7 @@ module.exports = async (app) => {
   app.use(morgan("dev"))
 // Configure CORS options
 const corsOptions = {
-  origin: 'http://localhost:4173', // Replace with the actual URL of your client application
+  origin: 'http://localhost:4173.com/api', // Replace with the actual URL of your client application
   credentials: true,
 };
 
