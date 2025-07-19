@@ -15,25 +15,25 @@ module.exports = async (app) => {
   app.use(express.urlencoded({ extended: true }));
 
   app.use(morgan("combined"));
-// Configure CORS options
+  // Configure CORS options
 
   //api
   workout("/api", app);
   schedule("/api", app);
   exercises("/api", app);
 
-const corsOptions = {
-  origin: 'https://workout-log.arlixsorto.com', // Replace with your frontend origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}
+  const corsOptions = {
+    origin: 'https://workout-log.arlixsorto.com', // Replace with your frontend origin
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }
 
-app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
 
   router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
   });
-  
+
   app.use('/', router)
   // error handling
   app.use(HandleErrors);
