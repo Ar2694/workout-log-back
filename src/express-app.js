@@ -22,6 +22,13 @@ module.exports = async (app) => {
   schedule("/api", app);
   exercises("/api", app);
 
+const corsOptions = {
+  origin: 'https://workout-log.arlixsorto.com', // Replace with your frontend origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}
+
+app.use(cors(corsOptions));
 
   router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
