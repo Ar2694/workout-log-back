@@ -17,11 +17,8 @@ module.exports = async (app) => {
   app.use(morgan("dev"))
 // Configure CORS options
 const corsOptions = {
-  origin: 'https://workout-log.arlixsorto.com', // Replace with the actual URL of your client application
-
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allowed HTTP methods
-      credentials: true, // Allow cookies and authentication headers to be sent
-      optionsSuccessStatus: 204 // For preflight requests
+  origin: 'http://localhost:4173', // Replace with the actual URL of your client application
+  credentials: true,
 };
 
 // Use the cors middleware with specific origin
