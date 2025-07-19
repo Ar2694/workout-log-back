@@ -23,7 +23,7 @@ module.exports = async (app) => {
   exercises("/api", app);
 
 const corsOptions = {
-  origin: 'https://workout-log.arlixsorto.com', // Replace with your frontend origin
+  origin: 'https://workout-log.arlixsorto.com/api', // Replace with your frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }
