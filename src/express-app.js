@@ -14,19 +14,14 @@ module.exports = async (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.use(morgan("dev"))
+  app.use(morgan("combined"));
 // Configure CORS options
-const corsOptions = {
-  origin: 'http://localhost:4173.com/api', // Replace with the actual URL of your client application
-  credentials: true,
-};
 
-// Use the cors middleware with specific origin
-app.use(cors(corsOptions));
   //api
   workout("/api", app);
   schedule("/api", app);
   exercises("/api", app);
+
 
   router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
