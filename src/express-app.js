@@ -5,6 +5,7 @@ const { workout, exercises, schedule } = require('src/api');
 const HandleErrors = require('./utils/error-handler')
 const router = express.Router();
 var path = require('path');
+const { DOMAIN_URL_ONE, DOMAIN_URL_TWO } = require("./config");
 
 module.exports = async (app) => {
   // view engine setup
@@ -18,7 +19,7 @@ module.exports = async (app) => {
   // Configure CORS options
 
   const corsOptions = {
-    origin: ["http://localhost:4173","https://workout-log.arlixsorto.com"],
+    origin: [DOMAIN_URL_ONE, DOMAIN_URL_TWO],
     allowedHeaders: ["Content-Type", "Authorization", "Origin"],
   }
 
