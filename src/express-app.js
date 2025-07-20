@@ -23,9 +23,7 @@ module.exports = async (app) => {
   exercises("/api", app);
 
   const corsOptions = {
-    origin: 'http://main.workout-log-back-aws.com', // Replace with your frontend origin
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: ['Content-Type', 'Authorization']
+    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173", "http://localhost:5173"]
   }
 
   app.use(cors(corsOptions));
