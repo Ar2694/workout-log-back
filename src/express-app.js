@@ -17,6 +17,12 @@ module.exports = async (app) => {
   app.use(morgan("dev"));
   // Configure CORS options
 
+  const corsOptions = {
+    origin: ["http://localhost:4173","https://workout-log.arlixsorto.com"],
+    allowedHeaders: ["Content-Type", "Authorization", "Origin"],
+  }
+
+  app.use(cors(corsOptions));
 
   //api
   workout("/api", app);
