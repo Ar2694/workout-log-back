@@ -18,7 +18,7 @@ module.exports = async (app) => {
   // Configure CORS options
 
   const corsOptions = {
-    origin: ["https://workout-log.arlixsorto.com"],
+    origin: ["http://localhost:4173"],
     allowedHeaders: ["Content-Type", "Authorization", "Origin"],
   }
 
