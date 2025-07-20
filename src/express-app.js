@@ -23,8 +23,9 @@ module.exports = async (app) => {
   exercises("/api", app);
 
   const corsOptions = {
-    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173","http://localhost:5173/"],
-     credentials: true
+    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173","http://localhost:5173"],
+    allowedHeaders: ["Content-Type", "Authorization","Origin"],
+
   }
 
   app.use(cors(corsOptions));
