@@ -14,11 +14,11 @@ module.exports = async (app) => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.use(morgan("combined"));
+  app.use(morgan("dev"));
   // Configure CORS options
 
   const corsOptions = {
-    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173", "http://localhost:5173"],
+    origin: ["https://workout-log.arlixsorto.com"],
     allowedHeaders: ["Content-Type", "Authorization", "Origin"],
   }
 
