@@ -19,7 +19,7 @@ module.exports = async (app) => {
 
   const corsOptions = {
     origin: ["https://workout-log.arlixsorto.com"],
-    allowedHeaders: ["Content-Type", "Authorization", "Origin"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   }
 
   app.use(cors(corsOptions));
