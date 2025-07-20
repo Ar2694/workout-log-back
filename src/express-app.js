@@ -23,26 +23,11 @@ module.exports = async (app) => {
   exercises("/api", app);
 
   const corsOptions = {
-    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173", "http://localhost:5173"],
+    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173","http://localhost:5173/"],
+     credentials: true
   }
 
-const allowedOrigins = [
-  "https://workout-log.arlixsorto.com",
-  "http://localhost:4173",
-  "http://localhost:5173"
-];
-
-const corsOptionsMultiple = {
-  origin: function (origin, callback) {
-    if (allowedOrigins.indexOf(origin) !== -1 || !origin) { // !origin allows requests from same origin (e.g., Postman)
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-};
-
-app.use(cors(corsOptionsMultiple));
+  app.use(cors(corsOptions));
 
   router.get('/', function (req, res, next) {
     res.render('index', { title: 'Express' });
