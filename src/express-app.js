@@ -17,12 +17,12 @@ module.exports = async (app) => {
   app.use(morgan("combined"));
   // Configure CORS options
 
-  // const corsOptions = {
-  //   origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173", "http://localhost:5173"],
-  //   allowedHeaders: ["Content-Type", "Authorization", "Origin"],
-  // }
+  const corsOptions = {
+    origin: ["https://workout-log.arlixsorto.com", "http://localhost:4173", "http://localhost:5173"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }
 
-  // app.use(cors(corsOptions));
+  app.use(cors(corsOptions));
 
   //api
   workout("/api", app);
