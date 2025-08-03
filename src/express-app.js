@@ -10,9 +10,9 @@ const { DOMAIN_URL_ONE, DOMAIN_URL_TWO } = require("./config");
 module.exports = async (app) => {
   // view engine setup
   app.set('views', "src/views");
-  app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'ejs');
   app.use(express.static("src/public"));
+  app.use(express.static("src/public/stylesheets"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
