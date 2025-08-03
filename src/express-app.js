@@ -5,7 +5,7 @@ const { workout, exercises, schedule } = require('src/api');
 const HandleErrors = require('./utils/error-handler')
 const router = express.Router();
 var path = require('path');
-const { DOMAIN_URL_ONE, DOMAIN_URL_TWO } = require("./config");
+const domains = require("./config");
 
 module.exports = async (app) => {
   // view engine setup
@@ -15,12 +15,12 @@ module.exports = async (app) => {
   app.use(express.static("src/public/stylesheets"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-
+console.log("Domains: ", domains);
   app.use(morgan("dev"));
   // Configure CORS options
 
   const corsOptions = {
-    origin: [DOMAIN_URL_ONE, DOMAIN_URL_TWO],
+    origin: domains,
     allowedHeaders: ["Content-Type", "Authorization", "Origin"],
   }
 

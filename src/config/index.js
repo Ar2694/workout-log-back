@@ -13,5 +13,6 @@ module.exports = {
   DB_URL: process.env.MONGODB_URI,
   APP_SECRET: process.env.APP_SECRET,
   DOMAIN_URL_ONE: process.env.DOMAIN_URL_ONE,
-  DOMAIN_URL_TWO: process.env.DOMAIN_URL_TWO
+  DOMAIN_URL_TWO: process.env.DOMAIN_URL_TWO,
+  DOMAIN_URL_THREE: process.env.DOMAIN_URL_THREE,
 };
